@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Invoice Django API Task</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Invoice Table</h2>
+  <p>Support Api/.</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>InvoiceID</th>
+        <th>Date</th>
+        <th>CustomerName</th>
+      </tr>
+    </thead>
+    <tbody> 
+
+        {% for i in mydata %} 
+          <tr>
+            <td><a href="{% url 'invoiceview' %}{{i.inv_id}}">{{ i.id }}</a></td> 
+            <td>{{ i.inv_id }}</td>
+            <td>{{ i.date }}</td> 
+            <td>{{ i.customer_name }}</td> 
+          </tr>
+        {% endfor %}  
+  
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
